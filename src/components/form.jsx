@@ -1,10 +1,13 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Button, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 import thr from "lodash/throttle";
 import de from "lodash/debounce";
+
+import axios from "../services/axiosInstance";
+import * as userService from "../services/userService/user";
 
 const Form = () => {
   const {
@@ -15,9 +18,9 @@ const Form = () => {
 
   const submit = async (data) => {
     try {
-      const res = await axios.post("http://localhost:5000/person", data);
+      await userService.postUser(data);
       // console.log(data);
-      console.log(res);
+      // console.log(res);
     } catch (e) {
       console.log(e);
     }
