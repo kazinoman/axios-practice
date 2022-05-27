@@ -41,9 +41,9 @@ const Form = () => {
   //   }
   // }, 3000);
 
-  const myFun = thr(() => {
-    console.log(" my fun called.");
-  }, 3000);
+  // const myFun = thr(() => {
+  //   console.log(" my fun called.");
+  // }, 3000);
 
   return (
     <div>
@@ -65,7 +65,7 @@ const Form = () => {
         <Button variant="contained" type="submit">
           Submit
         </Button>
-        <Button onClick={myFun}>click</Button>
+        {/* <Button onClick={myFun}>click</Button> */}
       </form>
     </div>
   );
